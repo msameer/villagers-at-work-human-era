@@ -21,10 +21,8 @@ cannot be merged, so a pack of changed model files is the only way to do either 
 | Human Era | `human-era` |
 | Human Era and its "FreshAni Activator" add-on | `human-era-fresh-animations` |
 
-Every Villagers at Work release carries both, zipped, as `vaw-human-era.zip` and
-`vaw-human-era-fa.zip`. Or take a folder from here: each is a complete pack. Either way, drop it in
-`resourcepacks/` and **put it above Human Era** in the resource pack list: it replaces model files,
-so it only works from higher up.
+Zip the folder's contents, or drop the folder itself into `resourcepacks/`, and **put it above
+Human Era** in the resource pack list: it replaces model files, so it only works from higher up.
 
 You also need [Entity Model Features](https://modrinth.com/mod/entity-model-features) and Entity
 Texture Features, which Human Era needs anyway, and the Villagers at Work **client jar**, which is

@@ -23,36 +23,49 @@ SWING = {
 # vanilla adds a fixed turn and shift of its own after this point.
 TRADE_ITEM = [1.0, -4.8, 0.6]
 
-ARMS = [("right_arm2", "left_arm2"), ("right_arms", "left_arms")]
+# The arm names Human Era uses, and the name of the pack built for each: its Fresh Animations
+# add-on renames them, and the two packs replace the same files, so they are built separately.
+ARMS = [("right_arm2", "left_arm2", "Human Era"), ("right_arms", "left_arms", "Human Era + Fresh Animations")]
+
+MCMETA = """{
+  "pack": {
+    "description": "Villagers at Work: swing and trade item for %s villagers",
+    "pack_format": 15,
+    "supported_formats": {"min_inclusive": 15, "max_inclusive": 999},
+    "min_format": 15,
+    "max_format": 999
+  }
+}
+"""
 
 
 def arm_names(text):
-    for right, left in ARMS:
+    for right, left, variant in ARMS:
         if '"%s.rx"' % right in text:
-            return right, left
-    return None, None
+            return right, left, variant
+    return None, None, None
 
 
 def patch(text):
     """Adds the swing to both arms and the trade item to the right one. Text in, text out, so the
     file keeps its own formatting and only what changes is changed."""
-    right, left = arm_names(text)
+    right, left, variant = arm_names(text)
     if right is None:
-        return None
+        return None, None
     for name, side in ((right, "right"), (left, "left")):
         key = '"%s.rx": "' % name
         if key not in text:
-            return None
+            return None, None
         start = text.index(key) + len(key)
         end = text.index('"', start)
         text = text[:start] + text[start:end] + SWING[side] + text[end:]
     # The attachment goes on the right arm's own part entry, beside its id.
     key = '"id": "%s"' % right
     if key not in text:
-        return None
+        return None, None
     at = text.index(key) + len(key)
     attachment = ', "attachments": {"villager_item": [%s]}' % ", ".join(str(v) for v in TRADE_ITEM)
-    return text[:at] + attachment + text[at:]
+    return text[:at] + attachment + text[at:], variant
 
 
 def main(source, out):
@@ -67,11 +80,14 @@ def main(source, out):
         sys.exit("no assets/minecraft/optifine/cem in %s" % source)
 
     written = {}
+    variant = None
     for name in sorted(os.listdir(cem)):
         if not name.startswith("villager") or not name.endswith(".jem") or "baby" in name:
             continue
         text = open(os.path.join(cem, name), encoding="utf-8").read()
-        patched = patch(text)
+        patched, found = patch(text)
+        if found is not None:
+            variant = found
         if patched is None:
             print("  skipped %s: no arms to swing" % name)
             continue
@@ -83,7 +99,8 @@ def main(source, out):
 
     here = os.path.dirname(os.path.abspath(__file__))
     with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as z:
-        for extra in ("pack.mcmeta", "pack.png", "LICENSE", "README.md"):
+        z.writestr("pack.mcmeta", MCMETA % variant)
+        for extra in ("pack.png", "LICENSE", "README.md"):
             path = os.path.join(here, extra)
             if os.path.exists(path):
                 z.write(path, extra)
