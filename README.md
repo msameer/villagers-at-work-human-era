@@ -1,7 +1,7 @@
 # Villagers at Work: Human Era compatibility
 
 Two small resource packs that make [Human Era](https://modrinth.com/resourcepack/human-era-villagers-illagers)
-villagers work properly with [Villagers at Work](https://github.com/msameer/villagers-at-work):
+villagers work properly with [Villagers at Work](https://www.curseforge.com/minecraft/mc-mods/villagers-at-work):
 
 - **They swing the tool they are working with.** Human Era gives villagers arms of its own and
   animates them itself, so nothing the mod does can move them. These packs add the swing to the
@@ -21,8 +21,9 @@ cannot be merged, so a pack of changed model files is the only way to do either 
 | Human Era | `human-era` |
 | Human Era and its "FreshAni Activator" add-on | `human-era-fresh-animations` |
 
-Every Villagers at Work release carries both, zipped, as `vaw-human-era.zip` and
-`vaw-human-era-fa.zip`. Or take a folder from here: each is a complete pack. Either way, drop it in
+Both are on CurseForge, zipped, as `vaw-human-era.zip` and `vaw-human-era-fa.zip`:
+[Villagers at Work - Human Era Villagers Compat](https://www.curseforge.com/minecraft/texture-packs/vaw-hevi-compat).
+Or take a folder from here: each is a complete pack. Either way, drop it in
 `resourcepacks/` and **put it above Human Era** in the resource pack list: it replaces model files,
 so it only works from higher up.
 

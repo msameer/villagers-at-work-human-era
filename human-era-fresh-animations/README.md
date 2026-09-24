@@ -1,7 +1,7 @@
 # Villagers at Work: Human Era compatibility
 
 Two small resource packs that make [Human Era](https://modrinth.com/resourcepack/human-era-villagers-illagers)
-villagers work properly with [Villagers at Work](https://github.com/msameer/villagers-at-work):
+villagers work properly with [Villagers at Work](https://www.curseforge.com/minecraft/mc-mods/villagers-at-work):
 
 - **They swing the tool they are working with.** Human Era gives villagers arms of its own and
   animates them itself, so nothing the mod does can move them. These packs add the swing to the
