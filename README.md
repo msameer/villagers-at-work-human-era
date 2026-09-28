@@ -1,8 +1,9 @@
 # Villagers at Work: Human Era compatibility
 
 Two resource packs that let [Human Era](https://modrinth.com/resourcepack/human-era-villagers-illagers)
-villagers swing the tool they work with and hold out the item they trade, with
-[Villagers at Work](https://www.curseforge.com/minecraft/mc-mods/villagers-at-work) and its client jar.
+villagers swing the tool they work with and hold out the item they trade, with Villagers at Work
+([CurseForge](https://www.curseforge.com/minecraft/mc-mods/villagers-at-work),
+[Modrinth](https://modrinth.com/mod/villagers-at-work)) and its client jar.
 
 | You have | Use |
 | :---- | :---- |
@@ -10,7 +11,8 @@ villagers swing the tool they work with and hold out the item they trade, with
 | Human Era and its "FreshAni Activator" add-on | `human-era-fresh-animations` |
 
 Put the pack **above Human Era** in the resource pack list. Zipped copies are on
-[CurseForge](https://www.curseforge.com/minecraft/texture-packs/vaw-hevi-compat).
+[CurseForge](https://www.curseforge.com/minecraft/texture-packs/vaw-hevi-compat) and
+[Modrinth](https://modrinth.com/resourcepack/vaw-hevi-compat).
 
 The packs are built from Human Era 3.91.6. After a Human Era update, rebuild them from its zip:
 
