@@ -27,8 +27,8 @@ Zip the folder's contents, or drop the folder itself into `resourcepacks/`, and 
 Human Era** in the resource pack list: it replaces model files, so it only works from higher up.
 
 You also need [Entity Model Features](https://modrinth.com/mod/entity-model-features) and Entity
-Texture Features, which Human Era needs anyway, and the Villagers at Work **client jar**, which is
-what puts the tool in the villager's hand in the first place.
+Texture Features, which Human Era needs anyway, and **Villagers at Work in your own game** as well,
+which is what puts the tool in the villager's hand in the first place.
 
 ## Keeping up with Human Era
 

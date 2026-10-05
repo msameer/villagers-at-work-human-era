@@ -3,7 +3,7 @@
 Two resource packs that let [Human Era](https://modrinth.com/resourcepack/human-era-villagers-illagers)
 villagers swing the tool they work with and hold out the item they trade, with Villagers at Work
 ([CurseForge](https://www.curseforge.com/minecraft/mc-mods/villagers-at-work),
-[Modrinth](https://modrinth.com/mod/villagers-at-work)) and its client jar.
+[Modrinth](https://modrinth.com/mod/villagers-at-work)) in the player's game.
 
 | You have | Use |
 | :---- | :---- |
