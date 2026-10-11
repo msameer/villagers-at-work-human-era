@@ -10,6 +10,10 @@ merge one. Nothing but the changed files is shipped, as Human Era's author asks.
 Its villagers' heads are shorter than vanilla's, so the pack also seats More Villagers at Work's
 hats on them (see HATS).
 
+It also dresses More Villagers at Work's Chef and beekeeper in Human Era's layout, from the art in
+`uniforms/` (see UNIFORMS): the mod's own clothes for them are drawn for vanilla's model, which Human
+Era maps differently, so they came out scrambled.
+
 Usage: make_pack.py <human-era-zip-or-dir> <output-zip>
 """
 import json, os, re, sys, tempfile, zipfile
@@ -47,6 +51,17 @@ HAT_VARIANT = "Human Era"
 
 # The vanilla parts whose pivot is the villager's neck, where its head turns.
 AT_NECK = ("head", "headwear", "body", "bodywear")
+
+# More Villagers at Work's professions dressed here, by the names of their art in `uniforms/`, each
+# drawn twice in Human Era's 128x128 layout: for skins with wide arms and for skins with slim ones.
+# Human Era picks a profession's clothes per skin with ETF, variant 2 for wide and 3 for slim, by the
+# same `.properties` for every profession, so each is shipped with a copy of its butcher's. Villagers
+# and zombie villagers share the layout and the choice.
+UNIFORMS = ("chef", "beekeeper")
+
+# The mod's own `.mcmeta` hides the biome hat under the profession's; a texture's metadata comes from
+# the pack the texture comes from, so it ships beside each one.
+HAT_MCMETA = '{\n  "villager": {\n    "hat": "full"\n  }\n}\n'
 
 MCMETA = """{
   "pack": {
@@ -144,6 +159,32 @@ def hat_files(top):
     return files
 
 
+def uniforms(source, here):
+    """The uniforms' files, path in the pack to bytes. An add-on such as the FreshAni Activator carries
+    models only and sits on Human Era, so its skins are Human Era's: without a butcher's `.properties`
+    of its own, the choice the `human-era` pack was built with is taken."""
+    files = {}
+    for entity in ("villager", "zombie_villager"):
+        props = os.path.join(source, "assets/minecraft/optifine/random/entity", entity, "profession/butcher.properties")
+        if not os.path.exists(props):
+            props = os.path.join(here, "human-era/assets/vaw_more/optifine/random/entity", entity, "profession/chef.properties")
+            if not os.path.exists(props):
+                sys.exit("no butcher.properties in %s: build the human-era pack from Human Era first" % source)
+            print("  %s: the clothes are chosen as in human-era" % entity)
+        props = open(props, "rb").read()
+        for name in UNIFORMS:
+            wide = open(os.path.join(here, "uniforms", name + "_wide.png"), "rb").read()
+            slim = open(os.path.join(here, "uniforms", name + "_slim.png"), "rb").read()
+            textures = "assets/vaw_more/textures/entity/%s/profession/" % entity
+            random = "assets/vaw_more/optifine/random/entity/%s/profession/" % entity
+            files[textures + name + ".png"] = slim  # as Human Era's own base copies are its slim ones
+            files[textures + name + ".png.mcmeta"] = HAT_MCMETA.encode()
+            files[random + name + ".properties"] = props
+            files[random + name + "2.png"] = wide
+            files[random + name + "3.png"] = slim
+    return files
+
+
 def main(source, out):
     tmp = None
     if os.path.isfile(source):
@@ -194,7 +235,10 @@ def main(source, out):
             z.writestr("assets/minecraft/optifine/cem/" + name, text)
         for name, text in hats.items():
             z.writestr(name, text)
-    print("wrote %s with %d model files and %d hat files" % (out, len(written), len(hats)))
+        dressed = uniforms(source, here)
+        for name, data in sorted(dressed.items()):
+            z.writestr(name, data)
+    print("wrote %s with %d model files, %d hat files and %d uniform files" % (out, len(written), len(hats), len(dressed)))
 
 
 if __name__ == "__main__":

@@ -3,8 +3,9 @@
 Two resource packs that let [Human Era](https://modrinth.com/resourcepack/human-era-villagers-illagers)
 villagers swing the tool they work with and hold out the item they trade, with Villagers at Work
 ([CurseForge](https://www.curseforge.com/minecraft/mc-mods/villagers-at-work),
-[Modrinth](https://modrinth.com/mod/villagers-at-work)) in the player's game. `human-era` also seats
-More Villagers at Work's Chef's and beekeeper's hats on Human Era's shorter heads.
+[Modrinth](https://modrinth.com/mod/villagers-at-work)) in the player's game. Both dress More
+Villagers at Work's Chef and beekeeper in clothes drawn for Human Era's villagers (`uniforms/`), and
+`human-era` also seats their hats on Human Era's shorter heads.
 
 | You have | Use |
 | :---- | :---- |
@@ -25,4 +26,4 @@ python3 make_pack.py ~/Downloads/HumanEraVillagersIllagers[x.y.z].zip human-era.
 
 The villager models are Human Era's, by CmdrMCNuggets, adapted here under
 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). The packs ship only the files they
-change, and they and `make_pack.py` are published under the same licence. See [LICENSE](LICENSE).
+change, and they, the clothes in `uniforms/` and `make_pack.py` are published under the same licence. See [LICENSE](LICENSE).
