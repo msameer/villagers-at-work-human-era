@@ -12,9 +12,14 @@ villagers work properly with Villagers at Work
   Vanilla draws that item from the villager's merged crossed arms, which Human Era empties without
   saying where the item should go, so it hangs in mid-air. That happens with Human Era alone; it is
   not caused by the mod.
+- **Their work hats sit on their heads** (`human-era` only). More Villagers at Work's Chef's and
+  beekeeper's hats are placed for vanilla's taller villager head, so on Human Era's they floated
+  above it. The pack lowers them on villagers alone, by the two pixels between the heads, and leaves
+  the hats as the mod has them on anyone else. With the FreshAni add-on a villager shows no hat at
+  all: it moves the head vanilla puts a hat on out of sight.
 
-Everything here is a change to Human Era's own villager models. A `.jem` model is replaced whole and
-cannot be merged, so a pack of changed model files is the only way to do either of these.
+The swing and the trade item are changes to Human Era's own villager models. A `.jem` model is
+replaced whole and cannot be merged, so a pack of changed model files is the only way to do either.
 
 ## Which one to use
 
@@ -42,7 +47,9 @@ python3 make_pack.py "~/Downloads/HEVI FreshAni Activator Fix 2.zip" human-era-f
 ```
 
 The script finds the pack's arm parts by name, adds the swing to both, adds the trade item's
-attachment point to the right one, and writes out only the model files it changed.
+attachment point to the right one, and writes out only the model files it changed. For Human Era it
+also measures the adult head in those models and writes the hats' item models lowered to it, from
+the hats' positions in More Villagers at Work 1.1.1: rebuild after a version that moves them.
 
 ## Credit and licence
 

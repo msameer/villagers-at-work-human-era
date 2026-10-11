@@ -1,0 +1,19 @@
+{
+  "model": {
+    "type": "minecraft:select",
+    "property": "minecraft:context_entity_type",
+    "cases": [
+      {
+        "when": "minecraft:villager",
+        "model": {
+          "type": "minecraft:model",
+          "model": "vaw_more:item/human_era/chef_hat"
+        }
+      }
+    ],
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "vaw_more:item/chef_hat"
+    }
+  }
+}
