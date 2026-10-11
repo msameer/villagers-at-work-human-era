@@ -43,9 +43,10 @@ which is what puts the tool in the villager's hand in the first place.
 
 ## Keeping up with Human Era
 
-These were built from **Human Era 3.91.6**. They carry copies of that version's villager models, so
-a newer Human Era is *older* than this pack in the list and would be overridden. After updating it,
-rebuild:
+These were built from **Human Era 3.91.6**, pack revision 2, the one that dresses More Villagers
+at Work's Chef and beekeeper, for More Villagers at Work 1.1.1. They carry
+copies of that version's villager models, so a newer Human Era is *older* than this pack in the list
+and would be overridden. After updating it, rebuild:
 
 ```bash
 python3 make_pack.py ~/Downloads/HumanEraVillagersIllagers[x.y.z].zip human-era.zip

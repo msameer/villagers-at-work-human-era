@@ -16,7 +16,10 @@ Put the pack **above Human Era** in the resource pack list. Zipped copies are on
 [CurseForge](https://www.curseforge.com/minecraft/texture-packs/vaw-hevi-compat) and
 [Modrinth](https://modrinth.com/resourcepack/vaw-hevi-compat).
 
-The packs are built from Human Era 3.91.6. After a Human Era update, rebuild them from its zip:
+The packs are built from Human Era 3.91.6, pack revision 2. Each pack's README names both, and the
+stores number the packs from them (`3.91.6-2`, `3.91.6-2-fa`): raise the revision in both pack READMEs
+whenever the packs change for the same Human Era, and start again with none after a Human Era
+update. After a Human Era update, rebuild them from its zip:
 
 ```bash
 python3 make_pack.py ~/Downloads/HumanEraVillagersIllagers[x.y.z].zip human-era.zip
