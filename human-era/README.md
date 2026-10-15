@@ -17,11 +17,12 @@ villagers work properly with Villagers at Work
   above it. The pack lowers them on villagers alone, by the two pixels between the heads, and leaves
   the hats as the mod has them on anyone else. With the FreshAni add-on a villager shows no hat at
   all: it moves the head vanilla puts a hat on out of sight.
-- **The Chef and the beekeeper wear their own clothes.** More Villagers at Work dresses them for
-  the vanilla villager, whose texture Human Era lays out differently, so on a Human Era villager
-  those clothes would come out scrambled. These packs carry them redrawn for Human Era: the Chef in a
-  white double-breasted jacket, a red neckerchief, a dark apron and checked trousers, the beekeeper
-  in a canvas bee suit with leather gloves, rubber boots and a smoker on its belt. Each villager gets
+- **The Chef, the beekeeper and the lumberjack wear their own clothes.** More Villagers at Work
+  dresses them for the vanilla villager, whose texture Human Era lays out differently, so on a Human
+  Era villager those clothes would come out scrambled. These packs carry them redrawn for Human Era:
+  the Chef in a white double-breasted jacket, a red neckerchief, a dark apron and checked trousers,
+  the beekeeper in a canvas bee suit with leather gloves, rubber boots and a smoker on its belt, the
+  lumberjack in a red buffalo-check shirt with suspenders, jeans and a grey cap. Each villager gets
   the version for its own skin, slim arms or wide, as Human Era chooses its own professions' clothes.
 
 The swing and the trade item are changes to Human Era's own villager models. A `.jem` model is
@@ -43,10 +44,10 @@ which is what puts the tool in the villager's hand in the first place.
 
 ## Keeping up with Human Era
 
-These were built from **Human Era 3.91.6**, pack revision 2, the one that dresses More Villagers
-at Work's Chef and beekeeper and seats their hats, for More Villagers at Work 1.1.1. They carry
-copies of that version's villager models, so a newer Human Era is *older* than this pack in the list
-and would be overridden. After updating it, rebuild:
+These were built from **Human Era 3.91.6**, pack revision 3, the one that dresses More Villagers
+at Work's lumberjack too, for More Villagers at Work 1.2.0. They carry copies of that version's
+villager models, so a newer Human Era is *older* than this pack in the list and would be overridden.
+After updating it, rebuild:
 
 ```bash
 python3 make_pack.py ~/Downloads/HumanEraVillagersIllagers[x.y.z].zip human-era.zip
@@ -57,8 +58,8 @@ The script finds the pack's arm parts by name, adds the swing to both, adds the 
 attachment point to the right one, and writes out only the model files it changed. For Human Era it
 also measures the adult head in those models and writes the hats' item models lowered to it, from
 the hats' positions in More Villagers at Work 1.1.1: rebuild after a version that moves them. It
-adds the Chef's and the beekeeper's clothes from `uniforms/`, chosen per skin as Human Era chooses a
-butcher's.
+adds the Chef's, the beekeeper's and the lumberjack's clothes from `uniforms/`, chosen per skin as
+Human Era chooses a butcher's.
 
 ## Credit and licence
 

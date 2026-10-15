@@ -10,8 +10,8 @@ merge one. Nothing but the changed files is shipped, as Human Era's author asks.
 Its villagers' heads are shorter than vanilla's, so the pack also seats More Villagers at Work's
 hats on them (see HATS).
 
-It also dresses More Villagers at Work's Chef and beekeeper in Human Era's layout, from the art in
-`uniforms/` (see UNIFORMS): the mod's own clothes for them are drawn for vanilla's model, which Human
+It also dresses More Villagers at Work's Chef, beekeeper and lumberjack in Human Era's layout, from
+the art in `uniforms/` (see UNIFORMS): the mod's own clothes for them are drawn for vanilla's model, which Human
 Era maps differently, so they came out scrambled.
 
 Usage: make_pack.py <human-era-zip-or-dir> <output-zip>
@@ -57,7 +57,7 @@ AT_NECK = ("head", "headwear", "body", "bodywear")
 # Human Era picks a profession's clothes per skin with ETF, variant 2 for wide and 3 for slim, by the
 # same `.properties` for every profession, so each is shipped with a copy of its butcher's. Villagers
 # and zombie villagers share the layout and the choice.
-UNIFORMS = ("chef", "beekeeper")
+UNIFORMS = ("chef", "beekeeper", "lumberjack")
 
 # The mod's own `.mcmeta` hides the biome hat under the profession's; a texture's metadata comes from
 # the pack the texture comes from, so it ships beside each one.

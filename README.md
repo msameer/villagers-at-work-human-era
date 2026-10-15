@@ -4,8 +4,8 @@ Two resource packs that let [Human Era](https://modrinth.com/resourcepack/human-
 villagers swing the tool they work with and hold out the item they trade, with Villagers at Work
 ([CurseForge](https://www.curseforge.com/minecraft/mc-mods/villagers-at-work),
 [Modrinth](https://modrinth.com/mod/villagers-at-work)) in the player's game. Both dress More
-Villagers at Work's Chef and beekeeper in clothes drawn for Human Era's villagers (`uniforms/`), and
-`human-era` also seats their hats on Human Era's shorter heads.
+Villagers at Work's Chef, beekeeper and lumberjack in clothes drawn for Human Era's villagers
+(`uniforms/`), and `human-era` also seats their hats on Human Era's shorter heads.
 
 | You have | Use |
 | :---- | :---- |
@@ -16,8 +16,8 @@ Put the pack **above Human Era** in the resource pack list. Zipped copies are on
 [CurseForge](https://www.curseforge.com/minecraft/texture-packs/vaw-hevi-compat) and
 [Modrinth](https://modrinth.com/resourcepack/vaw-hevi-compat).
 
-The packs are built from Human Era 3.91.6, pack revision 2. Each pack's README names both, and the
-stores number the packs from them (`3.91.6-2`, `3.91.6-2-fa`): raise the revision in both pack READMEs
+The packs are built from Human Era 3.91.6, pack revision 3. Each pack's README names both, and the
+stores number the packs from them (`3.91.6-3`, `3.91.6-3-fa`): raise the revision in both pack READMEs
 whenever the packs change for the same Human Era, and start again with none after a Human Era
 update. After a Human Era update, rebuild them from its zip:
 
