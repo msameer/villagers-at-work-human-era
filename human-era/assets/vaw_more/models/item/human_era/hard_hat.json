@@ -1,0 +1,12 @@
+{
+  "parent": "vaw_more:item/hard_hat",
+  "display": {
+    "head": {
+      "translation": [
+        0,
+        11.3,
+        0
+      ]
+    }
+  }
+}

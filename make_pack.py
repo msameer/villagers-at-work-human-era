@@ -10,8 +10,8 @@ merge one. Nothing but the changed files is shipped, as Human Era's author asks.
 Its villagers' heads are shorter than vanilla's, so the pack also seats More Villagers at Work's
 hats on them (see HATS).
 
-It also dresses More Villagers at Work's Chef, beekeeper and lumberjack in Human Era's layout, from
-the art in `uniforms/` (see UNIFORMS): the mod's own clothes for them are drawn for vanilla's model, which Human
+It also dresses More Villagers at Work's Chef, beekeeper, lumberjack and builder in Human Era's
+layout, from the art in `uniforms/` (see UNIFORMS): the mod's own clothes for them are drawn for vanilla's model, which Human
 Era maps differently, so they came out scrambled.
 
 Usage: make_pack.py <human-era-zip-or-dir> <output-zip>
@@ -40,10 +40,10 @@ ARMS = [("right_arm2", "left_arm2", "Human Era"), ("right_arms", "left_arms", "H
 # `minecraft:villager` at models of its own that lower only that display by the difference, and
 # leaves every other wearer, a player or an armour stand, the mod's. Vanilla draws a head item at
 # 0.625 of its size, so a pixel of head is 1.6 units of display. Each value is the hat's own `head`
-# translation in More Villagers at Work 1.1.1, which the pack's replaces: rebuild if the mod's
-# changes. Fresh Animations moves the vanilla head out of sight, and a head item with it, so the
+# translation in More Villagers at Work 1.1.1 (the builder's hard hat, 2.0.0), which the pack's
+# replaces: rebuild if the mod's changes. Fresh Animations moves the vanilla head out of sight, and a head item with it, so the
 # pack built from it gets none.
-HATS = {"chef_hat": 14.5, "beekeeper_hat": 12.5}
+HATS = {"chef_hat": 14.5, "beekeeper_hat": 12.5, "hard_hat": 14.5}
 VANILLA_HEAD_TOP = -10.0  # the top of vanilla's villager head, in model pixels from its neck, y down
 HEAD_ITEM_SCALE = 0.625
 ADULT_HEAD = "head2"
@@ -57,7 +57,7 @@ AT_NECK = ("head", "headwear", "body", "bodywear")
 # Human Era picks a profession's clothes per skin with ETF, variant 2 for wide and 3 for slim, by the
 # same `.properties` for every profession, so each is shipped with a copy of its butcher's. Villagers
 # and zombie villagers share the layout and the choice.
-UNIFORMS = ("chef", "beekeeper", "lumberjack")
+UNIFORMS = ("chef", "beekeeper", "lumberjack", "builder")
 
 # The mod's own `.mcmeta` hides the biome hat under the profession's; a texture's metadata comes from
 # the pack the texture comes from, so it ships beside each one.

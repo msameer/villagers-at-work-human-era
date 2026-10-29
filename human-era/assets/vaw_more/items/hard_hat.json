@@ -1,0 +1,19 @@
+{
+  "model": {
+    "type": "minecraft:select",
+    "property": "minecraft:context_entity_type",
+    "cases": [
+      {
+        "when": "minecraft:villager",
+        "model": {
+          "type": "minecraft:model",
+          "model": "vaw_more:item/human_era/hard_hat"
+        }
+      }
+    ],
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "vaw_more:item/hard_hat"
+    }
+  }
+}
